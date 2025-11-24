@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     get :download_budget_template_csv, on: :member
   end
+
+  post :process_budget, to: 'budgets#process_budget'
 end

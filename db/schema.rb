@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_17_084102) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_17_143647) do
   create_table "spend_forecasts", force: :cascade do |t|
     t.string "name"
     t.date "start_date"
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_084102) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "channel_daily_spend_limit", default: "0.0"
     t.index ["user_id"], name: "index_spend_forecasts_on_user_id"
   end
 

@@ -8,7 +8,7 @@ class SpendForecast < ApplicationRecord
   validates :status, presence: true, inclusion: { in: STATUSES }
   validate :end_date_after_start_date
 
-  attr_accessor :budget_file
+  attr_accessor :budget_file, :rows_lost
 
   enum status: STATUSES.index_by(&:to_sym)
 
